@@ -16,7 +16,11 @@ DMA_INIT_OBJS = dmaKit_init.o dmaKit_chan_init.o
 
 DMA_SPR_OBJS = dmaKit_spr_begin.o dmaKit_spr_end.o dmaKit_spr_alloc.o
 
-EE_OBJS = $(DMA_CORE_OBJS) $(DMA_INIT_OBJS) $(DMA_SPR_OBJS)
+DMA_VIF_OBJS = dmaKit_add_unpack_data.o dmaKit_get_microprogram_size.o dmaKit_upload_microprogram.o \
+	dmaKit_append_start_microprogram.o
+
+
+EE_OBJS = $(DMA_CORE_OBJS) $(DMA_INIT_OBJS) $(DMA_SPR_OBJS) $(DMA_VIF_OBJS)
 
 EE_CFLAGS += -Wno-unused
 
@@ -35,6 +39,9 @@ $(DMA_INIT_OBJS:%=$(EE_OBJS_DIR)%): $(EE_SRC_DIR)dmaInit.c
 	$(EE_C_COMPILE) -DF_$(*:$(EE_OBJS_DIR)%=%) $< -c -o $@
 
 $(DMA_SPR_OBJS:%=$(EE_OBJS_DIR)%): $(EE_SRC_DIR)dmaSpr.c
+	$(EE_C_COMPILE) -DF_$(*:$(EE_OBJS_DIR)%=%) $< -c -o $@
+
+$(DMA_VIF_OBJS:%=$(EE_OBJS_DIR)%): $(EE_SRC_DIR)dmaVif.c
 	$(EE_C_COMPILE) -DF_$(*:$(EE_OBJS_DIR)%=%) $< -c -o $@
 
 include ../../../Makefile.pref
