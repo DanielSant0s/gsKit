@@ -47,7 +47,7 @@ GS_TEXTURE_OBJS = gsKit_texture_size_ee.o gsKit_texture_size.o gsKit_texture_to_
 	gsKit_prim_triangle_strip_texture.o gsKit_prim_triangle_strip_texture_3d.o gsKit_prim_triangle_fan_texture.o \
 	gsKit_prim_triangle_fan_texture_3d.o gsKit_prim_quad_texture_3d.o gsKit_prim_quad_goraud_texture_3d.o
 
-GS_VU1_OBJS = 
+GS_VU1_OBJS = gsKit_init_vu1.o
 
 EE_OBJS = $(GS_CORE_OBJS) $(GS_FONTM_OBJS) $(GS_HIRES_OBJS) $(GS_INIT_OBJS) $(GS_MISC_OBJS) \
 	$(GS_TEXT_PRIMITIVE_OBJS) $(GS_TEXT_MANAGER_OBJS) $(GS_TEXTURE_OBJS) $(GS_VU1_OBJS)

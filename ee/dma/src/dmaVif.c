@@ -10,7 +10,7 @@
 // dmaVif.c - Interface to VIF.
 //
 
-#include "dmaVif.h"
+#include "dmaKit.h"
 #include <kernel.h>
 #include <malloc.h>
 

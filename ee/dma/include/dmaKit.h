@@ -20,5 +20,6 @@
 #include "dmaCore.h"
 #include "dmaInit.h"
 #include "dmaSpr.h"
+#include "dmaVif.h"
 
 #endif /* __DMAKIT_H__ */
